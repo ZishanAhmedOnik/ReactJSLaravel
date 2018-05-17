@@ -12,7 +12,7 @@ export default class Main extends Component {
     render() {
         return (
             <Provider store={store}>
-                <div className="container">
+                <div style={ {'marginTop': '5%'} } className="container">
                     <Form/>
 
                     <hr />
