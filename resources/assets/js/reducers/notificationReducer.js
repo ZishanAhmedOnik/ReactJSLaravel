@@ -1,13 +1,23 @@
-import { SAVE_NOTIFACTIONS } from '../actions/types';
+import { SAVE_NOTIFIACTIONS } from '../actions/types';
+import { FETCH_NOTIFIACTIONS } from '../actions/types';
 
-const initalState = {
-    name: ''
-}
+const initialState = {
+    items: []
+};
 
-export default function (state = initalState, action) {
+export default function (state = initialState, action) {
     switch (action.type) {
-        case SAVE_NOTIFACTIONS:
-            console.log("done :D :D :D");
+        case SAVE_NOTIFIACTIONS:
+            return {
+                ...state,
+                items: [ action.payload, ...state.items ]
+            };
+
+        case FETCH_NOTIFIACTIONS:
+            return {
+                ...state,
+                items: action.payload
+            };
 
         default:
             return state;

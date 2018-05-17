@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
 import Form from './Form'
+import List from './List';
 
 import { Provider } from 'react-redux';
 
@@ -12,6 +14,10 @@ export default class Main extends Component {
             <Provider store={store}>
                 <div className="container">
                     <Form/>
+
+                    <hr />
+
+                    <List/>
                 </div>
             </Provider>
         );

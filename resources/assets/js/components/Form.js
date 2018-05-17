@@ -7,7 +7,7 @@ class Form extends Component {
         super(props);
 
         this.state = {
-            name: ''
+            notification: ''
         };
 
         this.onChange = this.onChange.bind(this);
@@ -21,9 +21,15 @@ class Form extends Component {
     }
 
     onSave() {
-        console.log(this.state.name);
+        const notfication = {
+            notification: this.state.notification
+        };
 
-        this.props.createNotification();
+        this.props.createNotification(notfication);
+
+        this.setState({
+            notification: ''
+        });
     }
 
     render() {
@@ -34,10 +40,10 @@ class Form extends Component {
 
                     <input type="text"
                            className="form-control"
-                           name="name"
+                           name="notification"
                            id="notification-text"
                            placeholder="Notification"
-                           value={this.state.name}
+                           value={this.state.notification}
                            onChange={this.onChange}
                     />
                 </div>

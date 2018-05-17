@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', 'NotificationController@test');
+Route::get('/get', 'NotificationController@get');
+Route::post('/create', 'NotificationController@create');
